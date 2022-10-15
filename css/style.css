@@ -1,0 +1,117 @@
+.princ{
+    display: flex;
+}
+
+.secundaria{
+    width: 45%;
+    
+    margin: 5px;
+    padding: px;
+}
+
+form{
+    border: 0.3px solid gray;
+    width: 80%;
+    margin: 90px 10px 30px 50px;
+    background-color:rgb(242, 235, 235);
+    border-radius: 40px;
+}
+
+.header{
+    margin-top: 150px;
+    border: 1px solid gray;
+    border-radius:70px 70px 40px 40px;
+    background-color: #3B3D4C;
+    box-shadow: 1px 1px 2px gray;
+   
+}
+
+
+input{
+    width: 70%;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 40px;
+    border: 0.6px solid rgba(128, 128, 128, 0.64);
+}
+input:hover{
+    border: 0.5px solid #726DFF
+}
+
+.input1{
+    text-align: center;
+   
+}
+.input2{
+    text-align: center;
+    
+}
+
+.btn{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+ button{
+    width: 40%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background-color:#726DFF ;
+    border: none;
+ }
+
+ button:hover{
+    color:#726DFF;
+    background-color: white;
+    border: 0.8px solid #726DFF ;
+    transition: 0.5s;
+    font-weight: bolder;
+    font-size: 13px;
+   
+   
+
+ }
+
+ a{
+    text-align: center;
+    text-decoration: none;
+    color: #726DFF;
+ }
+ 
+ a:hover{
+    font-weight: bold;
+ }
+
+ .fade{
+    margin: 5px auto;
+    width: 40%;
+    align-items: center;
+    justify-items: center;
+    
+    display: flex;
+ }
+
+ img{
+    align-items: center;
+    animation: fadeIn 2s linear;
+ }
+
+ @keyframes fadeIn{
+    from {opacity: 0};
+    to {opacity: 2};
+}
+
+
+
+
+
+/*
+
+
+#D5A6C8
+#A789CB
+#866290
+#5C597C
+#282E42
+*/
