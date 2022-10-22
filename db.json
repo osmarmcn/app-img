@@ -10,70 +10,51 @@
     {
       "nome": "teste",
       "email": "teste@teste",
-      "senha": "12345",
-      "conSenha": "12345",
-      "codigo": "",
+      "senha": "123456789",
+      "conSenha": "123456789",
       "id": 2
+    },
+    {
+      "nome": "maria",
+      "email": "jose@jose",
+      "senha": "1234567890",
+      "conSenha": "1234567890",
+      "id": 3
     },
     {
       "nome": "",
       "email": "",
-      "senha": "",
-      "conSenha": "",
-      "codigo": "",
-      "id": 3
-    },
-    {
-      "nome": "osmar mendes",
-      "email": "teste@teste",
-      "senha": "32324",
-      "conSenha": "4535",
-      "codigo": "",
+      "senha": "12345678",
+      "conSenha": "12345678",
       "id": 4
     },
     {
-      "nome": "oioio",
-      "email": "osmarn84@gmail.com",
-      "senha": "32423",
-      "conSenha": "4343",
-      "codigo": "",
+      "nome": "teste",
+      "email": "teste@teste",
+      "senha": "123456",
+      "conSenha": "123456",
       "id": 5
     },
     {
-      "nome": "osmar mendes",
-      "email": "osmarn84@gmail.com",
-      "senha": "32423",
-      "conSenha": "4535",
-      "codigo": "",
+      "nome": "teste",
+      "email": "teste@teste",
+      "senha": "123456",
+      "conSenha": "123456",
       "id": 6
     },
     {
-      "nome": "teste",
-      "email": "osmar@osmar",
-      "senha": "32324",
-      "conSenha": "12345",
+      "nome": "",
+      "email": "",
+      "senha": "123456",
+      "conSenha": "123456",
       "id": 7
     },
     {
-      "nome": "teste",
+      "nome": "osmar",
       "email": "osmar@osmar",
-      "senha": "32423",
-      "conSenha": "4343",
+      "senha": "123456",
+      "conSenha": "123456",
       "id": 8
-    },
-    {
-      "nome": "lucas",
-      "email": "jose@jose",
-      "senha": "32423",
-      "conSenha": "4343",
-      "id": 9
-    },
-    {
-      "nome": "teste",
-      "email": "osmarn84@gmail.com",
-      "senha": "ghfghgf",
-      "conSenha": "dgfgdgd",
-      "id": 10
     }
   ]
 }

@@ -1,135 +1,103 @@
 
+const usernome = document.getElementById('usernome')
+const useremail = document.getElementById('email')
+const password = document.getElementById('password')
+const passwordTwo = document.getElementById('passwordTwo')
+const form = document.querySelector('#form')
+const codigo = document.querySelector('#id')
 
-let btn = document.querySelector('#btn')
-let res = document.querySelector('#res')
+form.addEventListener('submit', (e) =>{
+    e.preventDefault()
+    validar()
+})
+
+function validar(){
+    let nome = usernome.value.trim()
+    let email = useremail.value.trim()
+    let senha = password.value.trim()
+    let conSenha = passwordTwo.value.trim()
+
+    if(nome === ''){
+        validarError(usernome, 'Preencha esse campo')
+    }else{
+        validarSucesso(usernome)
+
+    }
+
+    if(email === ''){
+        validarError(useremail,'Preencha esse campo' )
+    }else{
+        validarSucesso(useremail)
+    }
+
+    if(senha === ''){
+        validarError(password,'Preencha esse campo')
+    }else if(senha.length < 5 ){
+        validarError(password,'Preencha esse campo, a senha deve ter mais que 5 numeros')
+    }else{
+        validarSucesso(password)
+    }
+
+   if(conSenha === ''){
+    validarError(passwordTwo, 'Preencha esse campo')
+   }else if(conSenha !== senha){
+    validarError(passwordTwo, 'Senhas incorretas, digite novamente')
+   }else{
+    validarSucesso(passwordTwo)
+     enviarFetch()
+   }
 
 
+}
 
+function validarError(input, message){
+    const formControl = input.parentElement
+    const small = formControl.querySelector('small')
+    small.innerText = message
+    formControl.className = 'form-control error'
 
-    btn.addEventListener('click', function(e){
-        e.preventDefault()
-        alert('parou')
+}
 
-        let nome = document.querySelector("#nome").value.trim()
-        let email = document.querySelector('#email').value.trim()
-        let senha = document.querySelector('#senha').value.trim()
-        let conSenha = document.querySelector('#conSenha').value.trim()
-        let codigo = document.querySelector('#codigo').value.trim()
+function validarSucesso(input){
+    const formControl = input.parentElement
+    formControl.className = 'form-control success'
+}
 
-        console.log(nome)
+function enviarFetch(){
+    const nome = usernome.value.trim()
+    const email= useremail.value.trim()
+    const senha = password.value.trim()
+    const conSenha = passwordTwo.value.trim()
+    const id = codigo.value
 
-        let data = {
-            nome:nome,
-            email:email,
-            senha:senha,
-            conSenha:conSenha
-        }
-        //alert(data[{nome,email,senha}.value])
-        //console.log(data)
+    const data ={
+        nome: nome,
+        email:email,
+        senha:senha,
+        conSenha:conSenha,
+        id:id.value
 
-        if(nome === '') {
-            // mostrar erro
-            // add classe
-            setErrorFor(username, 'Preencha esse campo')
-        } else {
-            // adicionar a classe de sucesso
-            setSuccessFor(nome)
-        }
-    
-        if(emailV === '') {
-            // mostrar erro
-            // add classe
-            setErrorFor(email, 'Preencha esse campo')
-        } else if (!isEmail(emailV)) {
-            setErrorFor(email, 'Email inválido')
-        } else {
-            // adicionar a classe de sucesso
-            setSuccessFor(email)
-        }
-       
-        if(senha === '') {
-            // mostrar erro
-            // add classe
-            setErrorFor(senha, 'Preencha esse campo')
-    
-        } else if(conSenha.length < 8) { 
-            setErrorFor(senha, 'Senha deve ter mais que 8 caracteres')
-        } else {
-            // adicionar a classe de sucesso
-            setSuccessFor(senha)
-        }
+    }
 
-        if(conSenhaValue === '') {
-            // mostrar erro
-            // add classe
-            setErrorFor(conSenhaValue, 'Preencha esse campo')
-    
-        } else if(senha !== conSenhaValue) { 
-            setErrorFor(conSenha, 'Senhas não tão iguais')
-        } else {
-            // adicionar a classe de sucesso
-            setSuccessFor(conSenha)
-        }
+    fetch('http://localhost:3000/cadastro',{
+            method:"POST",
+            headers:{
+                'Content-Type': 'application/json',
 
+            },
+            body: JSON.stringify(data)
+    }).then((res) =>{
+        return res.json()
         
-
-        if(codigo.value === ""){
-            fetch(" http://localhost:3000/cadastro",{
-                método : 'POST' ,
-                body : JSON . stringify ( data ),
-                headers : {
-                        'Content-Type' : 'application/json'
-                }
-            })
-            .then((resposta) =>{
-                return resposta.json()
-            })
-            .then((json) =>{
-                console.log(json)
-            })
-            .catch((error) =>{
-                console.log(error)
-
-            })
-        }else {
-            fetch(` http://localhost:3000/cadastro/${codigo}`, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(function(resposta){
-                return resposta.json();
-            })
-            .then(function(json){
-                console.log(json); 
-               
-            })
-            .catch(function(error){
-                console.error(error);
-            });
-        }
-
     })
-
-    function setErrorFor(input, message) {
-        const ajuste = input.parentElement;
-        const small = ajuste.querySelector('small')
-    
-        small.innerText = message
-    
-        ajuste.className = 'ajuste error'
-    }
-    
-    function setSuccessFor(input) {
-        const ajuste = input.parentElement;
-    
-        ajsutes.className = 'ajuste success'
-    }
-    function isEmail(email){
-        return
-    }
-        
+    .then((json) =>{
+        console.log(json)
+        alert('cadastro com sucesso')
+    })
+    .catch((Error) =>{
+        console.log(Error)
+    })
+}
     
 
 

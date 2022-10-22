@@ -8,24 +8,26 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="princ">
-        <div class="secundaria">
-            <form action="" class="ajuste">
+    <main class="container">
+        <div class="section">
+            <form class="" id="form">
                 <div class="header">  
                     
-                    <div class="input1">
+                    <div class="form-control">
                        
-                        <input type="text" id="email" placeholder="Usuário" required>
+                        <input type="text" id="useremail" placeholder="Usuário" >
+                        <small>Error Message</small>
                         
                     </div>
-                    <div class="input2">
+                    <div class="form-control">
                         
-                        <input type="password" id="senha" placeholder=" Senha" required>
+                        <input type="password" id="password" placeholder="digite sua senha" >
+                        <small>Error Message</small>
                     </div>
                     <div class="btn">
                         <button type="submit">Acessar</button>
                     </div>
-                    <div>
+                    <div class="cadastrar">
                         <a href="cadastro.html"><p>Cadastre-se aqui</p></a>
                     </div>
                 </div>
@@ -35,6 +37,8 @@
             <img src="img/maquina.png" alt="">
         </div>
     </main>
+
+    <script src="js/index.js"></script>
     
 </body>
 </html>
