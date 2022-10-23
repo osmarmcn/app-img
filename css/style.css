@@ -73,9 +73,24 @@ form{
     border: 3px solid #DB5A5A;
 }
 
+.form-control.error i.img-error {
+    visibility: visible;
+}
+
+.form-control.success i.img-success {
+    visibility: visible;
+}
+
 .form-control.error small{
     color: #DB5A5A;
     visibility: visible;
+}
+
+.form-control i {
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    visibility: hidden;
 }
 
 .form-control small {

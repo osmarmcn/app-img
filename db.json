@@ -8,53 +8,11 @@
       "conSenha": ""
     },
     {
-      "nome": "teste",
-      "email": "teste@teste",
-      "senha": "123456789",
-      "conSenha": "123456789",
-      "id": 2
-    },
-    {
-      "nome": "maria",
-      "email": "jose@jose",
-      "senha": "1234567890",
-      "conSenha": "1234567890",
-      "id": 3
-    },
-    {
-      "nome": "",
-      "email": "",
-      "senha": "12345678",
-      "conSenha": "12345678",
-      "id": 4
-    },
-    {
-      "nome": "teste",
-      "email": "teste@teste",
-      "senha": "123456",
-      "conSenha": "123456",
-      "id": 5
-    },
-    {
-      "nome": "teste",
-      "email": "teste@teste",
-      "senha": "123456",
-      "conSenha": "123456",
-      "id": 6
-    },
-    {
-      "nome": "",
-      "email": "",
-      "senha": "123456",
-      "conSenha": "123456",
-      "id": 7
-    },
-    {
       "nome": "osmar",
       "email": "osmar@osmar",
       "senha": "123456",
       "conSenha": "123456",
-      "id": 8
+      "id": 2
     }
   ]
 }

@@ -44,7 +44,13 @@ function validar(){
     validarError(passwordTwo, 'Senhas incorretas, digite novamente')
    }else{
     validarSucesso(passwordTwo)
-     enviarFetch()
+     
+   }
+
+   if(nome && email && senha && conSenha !== ''){
+        enviarFetch()
+   }else{
+       
    }
 
 
