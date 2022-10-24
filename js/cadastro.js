@@ -8,53 +8,8 @@ const codigo = document.querySelector('#id')
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault()
-    validar()
+    enviarFetch()
 })
-
-function validar(){
-    let nome = usernome.value.trim()
-    let email = useremail.value.trim()
-    let senha = password.value.trim()
-    let conSenha = passwordTwo.value.trim()
-
-    if(nome === ''){
-        validarError(usernome, 'Preencha esse campo')
-    }else{
-        validarSucesso(usernome)
-
-    }
-
-    if(email === ''){
-        validarError(useremail,'Preencha esse campo' )
-    }else{
-        validarSucesso(useremail)
-    }
-
-    if(senha === ''){
-        validarError(password,'Preencha esse campo')
-    }else if(senha.length < 5 ){
-        validarError(password,'Preencha esse campo, a senha deve ter mais que 5 numeros')
-    }else{
-        validarSucesso(password)
-    }
-
-   if(conSenha === ''){
-    validarError(passwordTwo, 'Preencha esse campo')
-   }else if(conSenha !== senha){
-    validarError(passwordTwo, 'Senhas incorretas, digite novamente')
-   }else{
-    validarSucesso(passwordTwo)
-     
-   }
-
-   if(nome && email && senha && conSenha !== ''){
-        enviarFetch()
-   }else{
-       
-   }
-
-
-}
 
 function validarError(input, message){
     const formControl = input.parentElement
@@ -76,34 +31,77 @@ function enviarFetch(){
     const conSenha = passwordTwo.value.trim()
     const id = codigo.value
 
-    const data ={
-        nome: nome,
-        email:email,
-        senha:senha,
-        conSenha:conSenha,
-        id:id.value
+
+    if(nome === ''){
+        validarError(usernome, 'Preencha esse campo')
+    }else{
+        validarSucesso(usernome)
 
     }
 
-    fetch('http://localhost:3000/cadastro',{
-            method:"POST",
-            headers:{
-                'Content-Type': 'application/json',
+    if(email === ''){
+        validarError(useremail,'Preencha esse campo' )
+    }else{
+        validarSucesso(useremail)
+    }
 
-            },
-            body: JSON.stringify(data)
-    }).then((res) =>{
-        return res.json()
+    if(senha === ''){
+        validarError(password,'Preencha esse campo')
+    }else if(senha.length < 6 ){
+        validarError(password,'Preencha esse campo, a senha deve ter mais que 6 numeros')
         
-    })
-    .then((json) =>{
-        console.log(json)
-        alert('cadastro com sucesso')
-    })
-    .catch((Error) =>{
-        console.log(Error)
-    })
+    }else{
+        validarSucesso(password)
+    }
+
+    if(conSenha === ''){
+        validarError(passwordTwo, 'Preencha esse campo')
+    }else if(conSenha.length < 6){
+        validarError(passwordTwo, 'Senha incorreta, digite novamente')
+
+    }else if(conSenha !== senha ){
+
+        validarError(passwordTwo, 'Senha incorreta, digite novamente')
+
+    }else if(conSenha === '' || nome ==='' || email === '' || senha ===''){
+        alert('algo de errado')
+
+    }else{
+        validarSucesso(passwordTwo)
+    
+
+        const data ={
+            
+                nome: nome,
+                email:email,
+                senha:senha,
+                conSenha:conSenha,
+                id:id.value
+        
+            }
+
+            fetch('http://localhost:3000/cadastro',{
+                        method:"POST",
+                        headers:{
+                            'Content-Type': 'application/json',
+
+                        },
+                        body: JSON.stringify(data)
+                }).then((res) =>{
+                    return res.json()
+                    
+                })
+                .then((json) =>{
+                    console.log(json)
+                    alert('cadastro com sucesso')
+                })
+                .catch((Error) =>{
+                    console.log(Error)
+                })
+        }    
 }
+
+    
     
 
 
